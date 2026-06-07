@@ -12,23 +12,26 @@ class QdrantManager:
     Manages vector storage and retrieval using a local Qdrant instance.
     """
     
-    def __init__(self, collection_name: str = "contracts", db_path: str = "data/qdrant", vector_size: int = 384):
+    def __init__(self, collection_name: str = "contracts", db_path: str = "data/qdrant", vector_size: int = 384, client: Optional[QdrantClient] = None):
         """
-        Initializes the local Qdrant client.
+        Initializes the local Qdrant client or uses an existing shared client.
         
         Args:
             collection_name: Name of the collection to store embeddings.
             db_path: Path to store local Qdrant database files.
             vector_size: Dimensionality of the embeddings (384 for bge-small).
+            client: Optional shared QdrantClient instance.
         """
         self.collection_name = collection_name
         self.vector_size = vector_size
         
-        # Ensure the data directory exists
-        os.makedirs(db_path, exist_ok=True)
-        
-        # Initialize local Qdrant client
-        self.client = QdrantClient(path=db_path)
+        if client is not None:
+            self.client = client
+        else:
+            # Ensure the data directory exists
+            os.makedirs(db_path, exist_ok=True)
+            # Initialize local Qdrant client
+            self.client = QdrantClient(path=db_path)
         
         self._ensure_collection()
 
