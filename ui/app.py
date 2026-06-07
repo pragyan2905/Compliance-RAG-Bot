@@ -170,6 +170,8 @@ def render_about_project():
     **Compliance RAG Bot** is a modular, deterministic enterprise AI retrieval and compliance auditing system. 
     It features a dual-mode architecture to handle both fast, local document audits and deep precedent searches.
     
+    🔗 **Open Source Code**: [View the GitHub Repository here](https://github.com/pragyan2905/Compliance-RAG-Bot/tree/main)
+    
     ### Technologies Used
     - **Document Parsing**: `PyMuPDF` with heuristic font analysis to preserve hierarchical metadata (Sections, Clauses).
     - **Embeddings**: `BAAI/bge-small-en-v1.5` via `SentenceTransformers` for rapid dense vectorization.

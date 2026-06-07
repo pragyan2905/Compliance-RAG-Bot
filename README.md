@@ -2,6 +2,8 @@
 
 **Enterprise Contract Intelligence & Global Precedent Search**
 
+🚀 **Live Deployment:** [View the Compliance RAG Bot here](https://compliance-rag-bot-hezrl7jrqsj77qrdqbavr2.streamlit.app)
+
 ComplianceRAG is a modular, deterministic, local-first retrieval-augmented generation (RAG) system built for legal and compliance auditing. It allows users to instantly audit individual contracts against compliance rules, or perform deep semantic precedent searches across a massive global database of real-world commercial contracts.
 
 ---
